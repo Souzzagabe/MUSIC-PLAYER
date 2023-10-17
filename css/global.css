@@ -322,10 +322,14 @@ h1 {
 
 /* RESPONSIVIDADE */
 
-@media (max-width: 600px) {
+@media (max-width: 500px) {
     .emblem-container{
         margin-bottom: 250px;
         
+    }
+
+    .show-texts span{
+        font-size: 30px;
     }
 
     .show-texts {
