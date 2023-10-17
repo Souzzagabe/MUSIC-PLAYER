@@ -47,11 +47,13 @@ const albums = [
 		spotify:
 			"https://open.spotify.com/embed/track/6epn3r7S14KUqlReYr77hA?utm_source=generator"
 	},
-];
+]
 
 scrollLeft.addEventListener("click", () => handleClickScroll(-1))
 scrollRight.addEventListener("click", () => handleClickScroll(1))
+
 heroDiv.addEventListener("animationend", () => {
+
 	heroDiv.classList.remove("album-transition")
 	document.addEventListener("keydown", handleKeyScroll)
 	scrollLeft.disabled = false
@@ -60,13 +62,13 @@ heroDiv.addEventListener("animationend", () => {
 	scrollRight.classList.remove("key-press-hover-right")
 
 	for (const text of texts) text.classList.add("show-texts")
-});
+})
 
 const handleClickScroll = (val) => {
 	if (index + val >= 0 && index + val < albums.length) {
 		updateDisplay((index += val))
 	}
-};
+}
 
 const handleKeyScroll = (e) => {
 	if (e.key == "ArrowLeft") {
@@ -77,8 +79,9 @@ const handleKeyScroll = (e) => {
 		scrollRight.classList.add("key-press-hover-right")
 		handleClickScroll(1)
 	}
-};
-let index = 0;
+}
+
+let index = 0
 
 const updateDisplay = (index) => {
 	let DELIMITER = ""
@@ -109,7 +112,7 @@ const updateDisplay = (index) => {
 	)
 
 	heroDiv.classList.add("album-transition")
-};
+}
 
 const createEmblem = (string, delimiter = "•") => {
 	const spans = []
@@ -123,10 +126,10 @@ const createEmblem = (string, delimiter = "•") => {
 		span.innerText = char
 		span.style.transform = `rotate(${180 - degVal * idx}deg)`;
 		if (char === delimiter) span.style.color = albums[index]["accent-color"]
-		spans.push(span);
-	});
+		spans.push(span)
+	})
 
 	return spans
-};
+}
 
 updateDisplay(index)
