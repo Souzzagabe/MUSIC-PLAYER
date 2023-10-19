@@ -9,7 +9,6 @@ const texts = document.querySelectorAll(".text")
 const albumNum = document.querySelector(".album-num")
 const spotifyWidget = document.querySelector(".spotify-widget iframe")
 
-
 const albums = [
 	{
 		album: "Stay",
